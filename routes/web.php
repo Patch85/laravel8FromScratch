@@ -22,17 +22,11 @@ Route::get('/posts', function () {
 });
 
 Route::get('posts/{post}', function ($slug) {
-    $path = __DIR__ . "/../resources/posts/$slug.html";
-
-    if (!file_exists($path)) {
-        // ddd('file does not exist');
-        // abort(404);
+    if (!file_exists($path = __DIR__ . "/../resources/posts/$slug.html")) {
         return redirect('/');
     }
 
-    $post = file_get_contents($path);
+    $post = cache()->remember("posts.{$slug}", now()->addHour(), fn () => file_get_contents($path));
 
-    return view('post', [
-        'post' => $post,
-    ]);
-});
+    return view('post', ['post' => $post]);
+})->where('post', '[A-z_\-]+');
