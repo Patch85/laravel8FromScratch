@@ -57,16 +57,32 @@ class Post
         });
     }
 
-
     /**
-     * Return a single Post object if a match is found for the slug
+     * Return a single Post object if a match is found for the slug, null otherwise
      *
      * @param string $slug
      * @return Post
      * @throws BindingResolutionException
      */
-    public static function find(string $slug): \App\Models\Post
+    public static function find(string $slug): Post
     {
         return static::all()->firstWhere('slug', $slug);
+    }
+
+    /**
+     * Returns a single Post object if the slug matches a post, fails otherwise
+     *
+     * @param string $slug
+     * @return Post
+     * @throws BindingResolutionException
+     * @throws ModelNotFoundException
+     */
+    public static function findOrFail(string $slug): Post
+    {
+        if (!$post = static::find($slug)) {
+            throw new ModelNotFoundException();
+        }
+
+        return $post;
     }
 }
