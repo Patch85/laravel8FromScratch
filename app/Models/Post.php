@@ -5,40 +5,66 @@ namespace App\Models;
 use Exception;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
+use Symfony\Component\Yaml\Exception\ParseException;
 
 class Post
 {
+    public $title;
+    public $excerpt;
+    public $date;
+    public $body;
+    public $slug;
+
     /**
-     * Returns an array of all blog posts
+     * New Post constructor
      *
-     * @return array $posts
-     * @throws BindingResolutionException
+     * @param string $title
+     * @param string $excerpt
+     * @param string $date
+     * @param string $body
+     * #param string $slug
      */
-    public static function all(): array
+    public function __construct(string $title, string $excerpt, string $date, string $body, string $slug)
     {
-        $files = File::files(resource_path("/posts"));
-        $posts = array_map(fn ($file) => $file->getContents(), $files);
-        return $posts;
+        $this->title = $title;
+        $this->excerpt = $excerpt;
+        $this->date = $date;
+        $this->body = $body;
+        $this->slug = $slug;
     }
 
     /**
-     * Returns a string built from the contents of an html file
+     * Returns a Collection of all Posts as Post objects
+     *
+     * @return Collection
+     * @throws BindingResolutionException
+     */
+    public static function all(): Collection
+    {
+        return collect(File::files(resource_path("/posts")))
+            ->map(fn ($file) => YamlFrontMatter::parseFile($file))
+            ->map(fn ($document) => new Post(
+                $document->title,
+                $document->excerpt,
+                $document->date,
+                $document->body(),
+                $document->slug,
+            ));
+    }
+
+
+    /**
+     * Return a single Post object if a match is found for the slug
      *
      * @param string $slug
-     * @return string $post
+     * @return Post
      * @throws BindingResolutionException
-     * @throws ModelNotFoundException
-     * @throws Exception
      */
-    public static function find(string $slug): string
+    public static function find(string $slug): \App\Models\Post
     {
-        if (!file_exists($path = resource_path("/posts/$slug.html"))) {
-            throw new ModelNotFoundException();
-        }
-
-        $post = cache()->remember("posts.{$slug}", now()->addHour(), fn () => file_get_contents($path));
-
-        return $post;
+        return static::all()->firstWhere('slug', $slug);
     }
 }
