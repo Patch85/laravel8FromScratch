@@ -85,8 +85,8 @@
             </div>
         </header>
 
-        <main class="max-w-6xl mx-auto mt-20">
-            <article class="bg-gray-100 rounded-xl">
+        <main class="max-w-6xl mx-auto mt-20 space-y-6">
+            <article class="transition-colors duration-300 hover:bg-gray-100 rounded-xl border border-black border-opacity-0 hover:border-opacity-5">
                 <div class="py-6  px-4 flex">
                     <div class="flex-1 mr-8">
                         <img src="/images/illustration-1.png" alt="Blog post illustration 1" class="rounded-xl">
@@ -130,9 +130,260 @@
                     </div>
                 </div>
             </article>
+
+            <div class="grid grid-cols-2">
+                <article class="transition-colors duration-300 hover:bg-gray-100 rounded-xl border border-black border-opacity-0 hover:border-opacity-5">
+                    <div class="py-6 px-5">
+                        <div class="mr-8">
+                            <img src="/images/illustration-2.png" alt="Blog post illustration 1" class="rounded-xl">
+                        </div>
+
+                        <div class="mt-8 flex flex-col justify-between">
+                            <header>
+                                <div class="space-x-2">
+                                    <a href="#" class="px-2 py-1 border border-blue-300 text-xs text-blue-300 rounded-full uppercase font-semibold">Techniques</a>
+
+                                    <a href="#" class="px-2 py-1 border border-red-300 text-xs text-red-300 rounded-full uppercase font-semibold">Updates</a>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h1 class="text-3xl">This is a big title and it will look great on two or even three lines. Woohoo!</h1>
+                                    <span class="mt- block text-gray-400 text-xs">
+                                        <time datetime="2020-11-17">November 17, 2020</time>
+                                    </span>
+                                </div>
+                            </header>
+
+                            <div class="text-sm mt-4">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque maxime excepturi reprehenderit. Et reiciendis dicta dignissimos dolor optio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque, accusamus corporis expedita autem!</p>
+
+                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis dicta dignissimos dolor optio?</p>
+                            </div>
+
+                            <footer class="flex justify-between items-center mt-2">
+                                <div class="flex items-center text-sm">
+                                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                                    <div class="ml-3">
+                                        <h5 class="font-bold">Lary Laracore</h5>
+                                        <h6>Mascot at Laracasts</h6>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a href="#" class="text-sm font-semibold bg-gray-200 rounded-full py-2 px-6">Read More</a>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="transition-colors duration-300 hover:bg-gray-100 rounded-xl border border-black border-opacity-0 hover:border-opacity-5">
+                    <div class="py-6 px-5">
+                        <div class="mr-8">
+                            <img src="/images/illustration-3.png" alt="Blog post illustration 1" class="rounded-xl">
+                        </div>
+
+                        <div class="mt-8 flex flex-col justify-between">
+                            <header>
+                                <div class="space-x-2">
+                                    <a href="#" class="px-2 py-1 border border-blue-300 text-xs text-blue-300 rounded-full uppercase font-semibold">Techniques</a>
+
+                                    <a href="#" class="px-2 py-1 border border-red-300 text-xs text-red-300 rounded-full uppercase font-semibold">Updates</a>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h1 class="text-3xl">This is a big title and it will look great on two or even three lines. Woohoo!</h1>
+                                    <span class="mt- block text-gray-400 text-xs">
+                                        <time datetime="2020-11-17">November 17, 2020</time>
+                                    </span>
+                                </div>
+                            </header>
+
+                            <div class="text-sm mt-4">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque maxime excepturi reprehenderit. Et reiciendis dicta dignissimos dolor optio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque, accusamus corporis expedita autem!</p>
+
+                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis dicta dignissimos dolor optio?</p>
+                            </div>
+
+                            <footer class="flex justify-between items-center mt-2">
+                                <div class="flex items-center text-sm">
+                                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                                    <div class="ml-3">
+                                        <h5 class="font-bold">Lary Laracore</h5>
+                                        <h6>Mascot at Laracasts</h6>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a href="#" class="text-sm font-semibold bg-gray-200 rounded-full py-2 px-6">Read More</a>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="grid grid-cols-3">
+                <article class="transition-colors duration-300 hover:bg-gray-100 rounded-xl border border-black border-opacity-0 hover:border-opacity-5">
+                    <div class="py-6 px-5">
+                        <div class="mr-8">
+                            <img src="/images/illustration-1.png" alt="Blog post illustration 1" class="rounded-xl">
+                        </div>
+
+                        <div class="mt-8 flex flex-col justify-between">
+                            <header>
+                                <div class="space-x-2">
+                                    <a href="#" class="px-2 py-1 border border-blue-300 text-xs text-blue-300 rounded-full uppercase font-semibold">Techniques</a>
+
+                                    <a href="#" class="px-2 py-1 border border-red-300 text-xs text-red-300 rounded-full uppercase font-semibold">Updates</a>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h1 class="text-3xl">This is a big title and it will look great on two or even three lines. Woohoo!</h1>
+                                    <span class="mt- block text-gray-400 text-xs">
+                                        <time datetime="2020-11-17">November 17, 2020</time>
+                                    </span>
+                                </div>
+                            </header>
+
+                            <div class="text-sm mt-4">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque maxime excepturi reprehenderit. Et reiciendis dicta dignissimos dolor optio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque, accusamus corporis expedita autem!</p>
+
+                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis dicta dignissimos dolor optio?</p>
+                            </div>
+
+                            <footer class="flex justify-between items-center mt-2">
+                                <div class="flex items-center text-sm">
+                                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                                    <div class="ml-3">
+                                        <h5 class="font-bold">Lary Laracore</h5>
+                                        <h6>Mascot at Laracasts</h6>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a href="#" class="text-sm font-semibold bg-gray-200 rounded-full py-2 px-6">Read More</a>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="transition-colors duration-300 hover:bg-gray-100 rounded-xl border border-black border-opacity-0 hover:border-opacity-5">
+                    <div class="py-6 px-5">
+                        <div class="mr-8">
+                            <img src="/images/illustration-4.png" alt="Blog post illustration 1" class="rounded-xl">
+                        </div>
+
+                        <div class="mt-8 flex flex-col justify-between">
+                            <header>
+                                <div class="space-x-2">
+                                    <a href="#" class="px-2 py-1 border border-blue-300 text-xs text-blue-300 rounded-full uppercase font-semibold">Techniques</a>
+
+                                    <a href="#" class="px-2 py-1 border border-red-300 text-xs text-red-300 rounded-full uppercase font-semibold">Updates</a>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h1 class="text-3xl">This is a big title and it will look great on two or even three lines. Woohoo!</h1>
+                                    <span class="mt- block text-gray-400 text-xs">
+                                        <time datetime="2020-11-17">November 17, 2020</time>
+                                    </span>
+                                </div>
+                            </header>
+
+                            <div class="text-sm mt-4">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque maxime excepturi reprehenderit. Et reiciendis dicta dignissimos dolor optio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque, accusamus corporis expedita autem!</p>
+
+                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis dicta dignissimos dolor optio?</p>
+                            </div>
+
+                            <footer class="flex justify-between items-center mt-2">
+                                <div class="flex items-center text-sm">
+                                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                                    <div class="ml-3">
+                                        <h5 class="font-bold">Lary Laracore</h5>
+                                        <h6>Mascot at Laracasts</h6>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a href="#" class="text-sm font-semibold bg-gray-200 rounded-full py-2 px-6">Read More</a>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="transition-colors duration-300 hover:bg-gray-100 rounded-xl border border-black border-opacity-0 hover:border-opacity-5">
+                    <div class="py-6 px-5">
+                        <div class="mr-8">
+                            <img src="/images/illustration-5.png" alt="Blog post illustration 1" class="rounded-xl">
+                        </div>
+
+                        <div class="mt-8 flex flex-col justify-between">
+                            <header>
+                                <div class="space-x-2">
+                                    <a href="#" class="px-2 py-1 border border-blue-300 text-xs text-blue-300 rounded-full uppercase font-semibold">Techniques</a>
+
+                                    <a href="#" class="px-2 py-1 border border-red-300 text-xs text-red-300 rounded-full uppercase font-semibold">Updates</a>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h1 class="text-3xl">This is a big title and it will look great on two or even three lines. Woohoo!</h1>
+                                    <span class="mt- block text-gray-400 text-xs">
+                                        <time datetime="2020-11-17">November 17, 2020</time>
+                                    </span>
+                                </div>
+                            </header>
+
+                            <div class="text-sm mt-4">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo neque maxime excepturi reprehenderit. Et reiciendis dicta dignissimos dolor optio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque, accusamus corporis expedita autem!</p>
+
+                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis dicta dignissimos dolor optio?</p>
+                            </div>
+
+                            <footer class="flex justify-between items-center mt-2">
+                                <div class="flex items-center text-sm">
+                                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                                    <div class="ml-3">
+                                        <h5 class="font-bold">Lary Laracore</h5>
+                                        <h6>Mascot at Laracasts</h6>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a href="#" class="text-sm font-semibold bg-gray-200 rounded-full py-2 px-6">Read More</a>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
         </main>
 
-        <footer>
+        <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center px-10 py-16 mt-16">
+            <img src="/images/lary-newsletter-icon.svg" alt="Lary newsletter icon" class="mx-auto">
+
+            <h5 class="text-3xl">Saty in touch with the latest posts</h5>
+            <p class="text-sm">Promise to keep the inbox clean. No bugs.</p>
+
+            <div class="mt-10">
+                <div class="relative mx-auto bg-gray-200 rounded-full inline-block">
+
+                    <form action="#" method="get" class="flex text-sm">
+                        <div class="py-3 px-5 inline-flex items-center">
+                            <label for="email">
+                                <img src="/images/mailbox-icon.svg" alt="mailbox letter">
+                            </label>
+                            <input type="text" id="email" name="email" placeholder="Your email address" class="bg-transparent pl-4">
+                        </div>
+
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-600 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">Subscribe</button>
+                    </form>
+                </div>
+            </div>
 
         </footer>
     </section>
