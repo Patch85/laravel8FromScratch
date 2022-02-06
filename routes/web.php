@@ -21,6 +21,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+// temporary
+Route::get('/post', function () {
+    return view('tempPost');
+});
+
 Route::get('/posts', function () {
     return view('posts', [
         'posts' => Post::latest()->get()
