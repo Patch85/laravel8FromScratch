@@ -55,9 +55,6 @@
                         <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
                             height="22" viewBox="0 0 22 22">
                             <g fill="none" fill-rule="evenodd">
-                                <path stroke='#000' stroke-opacity='0.12' stroke-width='0.5' d='M21 1v20.16H.84V1z'>
-                                </path>
-
                                 <path fill="#222"
                                     d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
                             </g>
@@ -75,9 +72,6 @@
                         <svg class="transform -rotate-90 absolute pointer-events-none" style="right: 12px;" width="22"
                             height="22" viewBox="0 0 22 22">
                             <g fill="none" fill-rule="evenodd">
-                                <path stroke='#000' stroke-opacity='0.12' stroke-width='0.5' d='M21 1v20.16H.84V1z'>
-                                </path>
-
                                 <path fill="#222"
                                     d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
                             </g>
@@ -104,7 +98,7 @@
                     </div>
 
                     <div class="flex-1 flex flex-col justify-between">
-                        <header class="mt-8">
+                        <header class="mt-8 lg:mt-0">
                             <div class="space-x-2">
                                 <a href="#"
                                     class="px-2 py-1 border border-blue-300 text-xs text-blue-300 rounded-full uppercase font-semibold">Techniques</a>
@@ -114,7 +108,8 @@
                             </div>
 
                             <div class="mt-4">
-                                <h1 class="text-3xl">This is a big title and it will look great on two or even three
+                                <h1 class="text-3xl">This is a big title and it will look great on two or even
+                                    three
                                     lines. Woohoo!</h1>
                                 <span class="mt-2 block text-gray-400 text-xs">
                                     <time datetime="2020-11-17">November 17, 2020</time>
@@ -128,7 +123,8 @@
                                 consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque, accusamus
                                 corporis expedita autem!</p>
 
-                            <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis
+                            <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+                                reiciendis
                                 dicta dignissimos dolor optio?</p>
                         </div>
 
@@ -169,7 +165,8 @@
                                 </div>
 
                                 <div class="mt-4">
-                                    <h1 class="text-3xl">This is a big title and it will look great on two or even three
+                                    <h1 class="text-3xl">This is a big title and it will look great on two or even
+                                        three
                                         lines. Woohoo!</h1>
                                     <span class="mt- block text-gray-400 text-xs">
                                         <time datetime="2020-11-17">November 17, 2020</time>
@@ -183,7 +180,8 @@
                                     amet consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque,
                                     accusamus corporis expedita autem!</p>
 
-                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis
+                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+                                    reiciendis
                                     dicta dignissimos dolor optio?</p>
                             </div>
 
@@ -223,7 +221,8 @@
                                 </div>
 
                                 <div class="mt-4">
-                                    <h1 class="text-3xl">This is a big title and it will look great on two or even three
+                                    <h1 class="text-3xl">This is a big title and it will look great on two or even
+                                        three
                                         lines. Woohoo!</h1>
                                     <span class="mt- block text-gray-400 text-xs">
                                         <time datetime="2020-11-17">November 17, 2020</time>
@@ -237,7 +236,8 @@
                                     amet consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque,
                                     accusamus corporis expedita autem!</p>
 
-                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis
+                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+                                    reiciendis
                                     dicta dignissimos dolor optio?</p>
                             </div>
 
@@ -279,7 +279,8 @@
                                 </div>
 
                                 <div class="mt-4">
-                                    <h1 class="text-3xl">This is a big title and it will look great on two or even three
+                                    <h1 class="text-3xl">This is a big title and it will look great on two or even
+                                        three
                                         lines. Woohoo!</h1>
                                     <span class="mt- block text-gray-400 text-xs">
                                         <time datetime="2020-11-17">November 17, 2020</time>
@@ -293,7 +294,8 @@
                                     amet consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque,
                                     accusamus corporis expedita autem!</p>
 
-                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis
+                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+                                    reiciendis
                                     dicta dignissimos dolor optio?</p>
                             </div>
 
@@ -319,7 +321,8 @@
                     class="transition-colors duration-300 hover:bg-gray-100 rounded-xl border border-black border-opacity-0 hover:border-opacity-5">
                     <div class="py-6 px-5">
                         <div class="mr-8">
-                            <img src="/images/illustration-4.png" alt="Blog post illustration 1" class="rounded-xl">
+                            <img src="/images/illustration-4.png" alt="Blog post illustration 1"
+                                class="rounded-xl">
                         </div>
 
                         <div class="mt-8 flex flex-col justify-between">
@@ -333,7 +336,8 @@
                                 </div>
 
                                 <div class="mt-4">
-                                    <h1 class="text-3xl">This is a big title and it will look great on two or even three
+                                    <h1 class="text-3xl">This is a big title and it will look great on two or
+                                        even three
                                         lines. Woohoo!</h1>
                                     <span class="mt- block text-gray-400 text-xs">
                                         <time datetime="2020-11-17">November 17, 2020</time>
@@ -347,7 +351,8 @@
                                     amet consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque,
                                     accusamus corporis expedita autem!</p>
 
-                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis
+                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+                                    reiciendis
                                     dicta dignissimos dolor optio?</p>
                             </div>
 
@@ -373,7 +378,8 @@
                     class="transition-colors duration-300 hover:bg-gray-100 rounded-xl border border-black border-opacity-0 hover:border-opacity-5">
                     <div class="py-6 px-5">
                         <div class="mr-8">
-                            <img src="/images/illustration-5.png" alt="Blog post illustration 1" class="rounded-xl">
+                            <img src="/images/illustration-5.png" alt="Blog post illustration 1"
+                                class="rounded-xl">
                         </div>
 
                         <div class="mt-8 flex flex-col justify-between">
@@ -387,7 +393,8 @@
                                 </div>
 
                                 <div class="mt-4">
-                                    <h1 class="text-3xl">This is a big title and it will look great on two or even three
+                                    <h1 class="text-3xl">This is a big title and it will look great on two or
+                                        even three
                                         lines. Woohoo!</h1>
                                     <span class="mt- block text-gray-400 text-xs">
                                         <time datetime="2020-11-17">November 17, 2020</time>
@@ -401,7 +408,8 @@
                                     amet consectetur adipisicing elit. Amet alias sint suscipit ex accusantium eaque,
                                     accusamus corporis expedita autem!</p>
 
-                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reiciendis
+                                <p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
+                                    reiciendis
                                     dicta dignissimos dolor optio?</p>
                             </div>
 
