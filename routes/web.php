@@ -20,24 +20,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// temporary
-Route::get('/post', function () {
-    return view('tempPost');
-});
-
 Route::get('/posts', function () {
     return view('posts', [
         'posts' => Post::latest()->get()
     ]);
 });
 
-Route::get('posts/{post:slug}', function (Post $post) {
+Route::get('/posts/{post:slug}', function (Post $post) {
     return view('post', [
         'post' =>  $post
     ]);
 });
 
-Route::get('categories/{category:slug}', function (Category $category) {
+Route::get('/categories/{category:slug}', function (Category $category) {
     return view('posts', [
         'posts' => $category->posts
     ]);
