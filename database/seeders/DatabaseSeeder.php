@@ -16,11 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $users = User::factory(6)->create();
-        $categories = Category::factory(4)->create();
+        $users = User::factory(10)->create();
+        $categories = Category::factory(30)->create()->unique();
 
         $a = 1;
-        while ($a <= 15) {
+        while ($a <= 65) {
             Post::factory()->create([
                 'user_id' => $users->random(),
                 'category_id' => $categories->random(),

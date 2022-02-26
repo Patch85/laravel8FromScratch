@@ -22,25 +22,20 @@
                     <div class="flex justify-between mb-6 -mt-10">
                         <a href="/posts"
                             class="relative inline-flex items-center text-lg hover:text-blue-500 transition-colors duration-200">
-                            <svg class="mr-2" width="22" height="22" viewBox="0 0 22 22">
-                                <g fill="none" fill-rule="evenodd">
-                                    <path class="fill-current"
-                                        d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z">
-                                    </path>
-                                </g>
-                            </svg>
+
+                            <x-icon name="left-arrow" class="mr-2" />
                             Back to Posts
                         </a>
 
                         <div class="space-x-2">
-                           <x-category-button :category="$post->category"/>
+                            <x-category-button :category="$post->category" />
                         </div>
                     </div>
 
-                    <h1 class="font-bold text-4xl mb-10">{{$post->title}}</h1>
+                    <h1 class="font-bold text-4xl mb-10">{{ $post->title }}</h1>
 
                     <div class="space-y-6 text-lg">
-                        {{$post->body}}
+                        {!! $post->body !!}
                     </div>
                 </div>
             </article>
