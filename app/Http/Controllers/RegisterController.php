@@ -5,11 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Contracts\View\View;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 
 class RegisterController extends Controller
 {
+    /**
+     * @return View|Factory
+     * @throws BindingResolutionException
+     */
     public function create()
     {
         return view('register.create');
