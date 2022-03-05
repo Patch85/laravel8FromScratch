@@ -47,7 +47,7 @@ class Post extends Model
             $filters['author'] ?? false,
             fn ($query, $author) => $query->whereHas(
                 'author',
-                fn ($query) => $query->where('name', $author)
+                fn ($query) => $query->where('username', $author)
             )
         );
     }

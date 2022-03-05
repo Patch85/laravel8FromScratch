@@ -13,7 +13,23 @@
                         Name
                     </label>
 
-                    <input type="text" class="border border-gray-400 p-2 w-full" name="name" id="name" required>
+                    <input type="text" class="border border-gray-400 p-2 w-full" name="name" id="name" value="{{ old('name') }}" placeholder="Jane Doe" required>
+
+                    @error('name')
+                        <p class="text-red-600 text-x mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                  <div class="mb-6">
+                    <label for="username" class="block mb-2 uppercase font-bold text-xs text-gray-700">
+                        Username
+                    </label>
+
+                    <input type="text" class="border border-gray-400 p-2 w-full" name="username" id="username" value="{{ old('username') }}" placeholder="janeDoe" required>
+
+                    @error('username')
+                        <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
                <div class="mb-6">
@@ -21,7 +37,11 @@
                         Email
                     </label>
 
-                    <input type="email" name="email" id="email" class="border border-gray-400 p-2 w-full">
+                    <input type="email" name="email" id="email" class="border border-gray-400 p-2 w-full" value="{{ old('email') }}" placeholder="janeDoe@email.com" required>
+
+                    @error('email')
+                        <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="mb-6">
@@ -29,12 +49,20 @@
                         Password
                     </label>
 
-                    <input type="password" name="password" id="password" class="border border-gray-400 p-2 w-full">
+                    <input type="password" name="password" id="password" class="border border-gray-400 p-2 w-full" required >
                 </div>
 
                 <div class="mb-6">
                     <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">Submit</button>
                 </div>
+
+                @if ($errors->any())
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li class="text-red-600 text-xs">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
             </form>
 

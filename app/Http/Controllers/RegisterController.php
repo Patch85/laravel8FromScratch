@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\Validation\Rule;
 
 class RegisterController extends Controller
 {
@@ -31,10 +32,12 @@ class RegisterController extends Controller
         $input = $request
             ->validate([
                 'name' => ['required', 'max:255'],
-                'email' => ['required', 'email', 'max:255'],
+                'username' => ['required', 'min:3', 'max:255', Rule::unique('users', 'username')],
+                'email' => ['required', 'email', 'max:255', Rule::unique('users', 'email')],
                 'password' => ['required', 'min:7', 'max:255'],
             ], $request->only([
                 'name',
+                'username',
                 'email',
                 'password',
             ]));

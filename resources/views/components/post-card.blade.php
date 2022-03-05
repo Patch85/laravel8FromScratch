@@ -40,8 +40,8 @@
 
                     <div class="ml-3">
                         <h5 class="font-bold">
-                            <a href="/posts/?author={{ $post->author->name }}">
-                                {{ $post->author->name }}
+                            <a href="/posts/?author={{ $post->author->username }}">
+                                {{ $post->author->username }}
                             </a>
                         </h5>
                     </div>
