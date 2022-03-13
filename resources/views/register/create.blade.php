@@ -16,7 +16,7 @@
                     <input type="text" class="border border-gray-400 p-2 w-full" name="name" id="name" value="{{ old('name') }}" placeholder="Jane Doe" required>
 
                     @error('name')
-                        <p class="text-red-600 text-x mt-1">{{ $message }}</p>
+                        <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
                     @enderror
                 </div>
 
