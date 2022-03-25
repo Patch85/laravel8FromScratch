@@ -14,8 +14,8 @@
                         <img src="/images/lary-avatar.svg" alt="Lary avatar">
                         <div class="ml-3 text-left">
                             <h5 class="font-bold">
-                                <a href="/posts/?author={{ $post->author->name }}">
-                                    {{ $post->author->name }}
+                                <a href="/posts/?author={{ $post->author->username }}">
+                                    {{ $post->author->username }}
                                 </a>
                             </h5>
                         </div>
@@ -44,10 +44,11 @@
                 </div>
 
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
-                    <x-post-comment />
-                    <x-post-comment />
-                    <x-post-comment />
-                    <x-post-comment />
+
+                    @foreach ($post->comments as $comment)
+                        <x-post-comment :comment="$comment" />
+                    @endforeach
+
                 </section>
 
             </article>

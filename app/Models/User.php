@@ -61,9 +61,21 @@ class User extends Authenticatable
         return ucwords($name);
     }
 
-    /** @return HasMany  */
+    /**
+     *
+     * @return HasMany
+     */
     public function posts()
     {
         return $this->hasMany(Post::class);
+    }
+
+    /**
+     *
+     * @return HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

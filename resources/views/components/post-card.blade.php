@@ -36,7 +36,7 @@
 
                 <div class="flex items-center text-sm">
 
-                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                    <img src="https://i.pravatar.cc/100" alt="random avatar" width="60" class="rounded-xl">
 
                     <div class="ml-3">
                         <h5 class="font-bold">

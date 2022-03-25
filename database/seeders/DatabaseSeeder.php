@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Post;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,16 +18,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $users = User::factory(8)->create();
-        $categories = Category::factory(15)->create()->unique();
+        $categories = Category::factory()->count(12)->create()->unique();
 
-        $a = 1;
-        while ($a <= 40) {
+        $users = User::factory()->count(10)->create()->unique();
+
+        $p = 1;
+        while ($p <= 30) {
             Post::factory()->create([
                 'user_id' => $users->random(),
                 'category_id' => $categories->random(),
             ]);
-            $a++;
+            $p++;
+        }
+
+        $posts = Post::all();
+
+        $c = 1;
+        while ($c <= 100) {
+            Comment::factory()->create([
+                'user_id' => $users->random(),
+                'post_id' => $posts->random(),
+            ]);
+            $c++;
         }
     }
 }
