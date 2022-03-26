@@ -40,7 +40,7 @@
                     </form>
                 @endguest
 
-                <a href="#"
+                <a href="#newsletter"
                     class="text-xs text-white font-semi-bold bg-blue-500 ml-3 rounded-full uppercase py-3 px-3">Subscribe
                     for Updates</a>
             </div>
@@ -48,7 +48,7 @@
 
         {{ $content }}
 
-        <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center px-10 py-16 mt-16">
+        <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center px-10 py-16 mt-16">
             <img src="/images/lary-newsletter-icon.svg" alt="Lary newsletter icon" class="mx-auto">
 
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>

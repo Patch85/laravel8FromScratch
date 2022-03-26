@@ -32,3 +32,17 @@ Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')
 Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
+
+Route::get('ping', function () {
+    $mailchimp = new \MailchimpMarketing\ApiClient();
+
+    $mailchimp->setConfig([
+        'apiKey' => config('services.mailchimp.key'),
+        'server' => config('services.mailchimp.server'),
+    ]);
+
+    // $response = $mailchimp->ping->get();
+    // $response = $mailchimp->lists->getAllLists();
+    $response = $mailchimp->lists->getList('b6e4cecc57');
+    ddd($response);
+});
