@@ -11,7 +11,8 @@
                     </p>
 
                     <div class="flex items-center justify-center text-sm mt-4">
-                        <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                        <img src="https://i.pravatar.cc/60?u={{ $post->author->id }}" alt="random avatar" width="60"
+                            class="rounded-xl">
                         <div class="ml-3 text-left">
                             <h5 class="font-bold">
                                 <a href="/posts/?author={{ $post->author->username }}">
@@ -44,6 +45,30 @@
                 </div>
 
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
+
+                    <x-panel>
+                        <form action="" method="post">
+                            @csrf
+
+                            <header class="flex items-center">
+                                <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}" alt="random avatar"
+                                    width="60" height="60" class="rounded-full">
+
+                                <h2 class="ml-4">Want to Participate?</h2>
+
+                            </header>
+
+                            <div class="mt-6">
+                                <textarea name="body" rows="5" class="w-full mt-10 text-sm focus:ring p-2"
+                                    placeholder="Your thoughts here..."></textarea>
+                            </div>
+
+                            <footer class="flex justify-end mt-6 pt-6 border-t border-gray-200">
+                                <button type="submit"
+                                    class="bg-blue-500 text-white text-xs uppercase font-semibold rounded-2xl py-2 px-10 hover:bg-blue-600">Post</button>
+                            </footer>
+                        </form>
+                    </x-panel>
 
                     @foreach ($post->comments as $comment)
                         <x-post-comment :comment="$comment" />
