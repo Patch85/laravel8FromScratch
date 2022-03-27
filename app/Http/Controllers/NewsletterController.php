@@ -9,9 +9,19 @@ use Illuminate\Http\RedirectResponse;
 use Psr\Container\NotFoundExceptionInterface;
 use Psr\Container\ContainerExceptionInterface;
 use Illuminate\Contracts\Container\BindingResolutionException;
+use MailchimpMarketing\ApiClient;
 
 class NewsletterController extends Controller
 {
+    /**
+     * @param ApiClient $client
+     * @return void
+     */
+    public function __construct(protected ApiClient $client)
+    {
+        # code...
+    }
+
     /**
      * @param Newsletter $newsletter
      * @param Request $request
@@ -22,14 +32,19 @@ class NewsletterController extends Controller
      */
     public function __invoke(Newsletter $newsletter, Request $request)
     {
-        $input = $request->validate(['email' => ['required', 'email']]);
+        $input = $request
+            ->validate([
+                'email' => ['required', 'email']
+            ], $request->only([
+                'email',
+            ]));
 
         try {
             $newsletter->subscribe($input['email']);
         } catch (\Exception $e) {
             \Illuminate\Validation\ValidationException::withMessages([
                 'email' => 'This email could not be added to our newsletter list.',
-                'original' => $e->getMessage(),
+                'caughtExceptionMessage' => $e->getMessage(),
             ]);
         }
 
