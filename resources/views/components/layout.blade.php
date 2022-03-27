@@ -48,7 +48,8 @@
 
         {{ $content }}
 
-        <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center px-10 py-16 mt-16">
+        <footer id="newsletter"
+            class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center px-10 py-16 mt-16">
             <img src="/images/lary-newsletter-icon.svg" alt="Lary newsletter icon" class="mx-auto">
 
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
@@ -57,17 +58,29 @@
             <div class="mt-10">
                 <div class="relative mx-auto lg:bg-gray-200 rounded-full inline-block">
 
-                    <form action="#" method="post" class="lg:flex text-sm">
+                    <form action="/newsletter" method="post" class="lg:flex text-sm">
+
+                        @csrf
+
                         <div class="lg:py-3 lg:px-5 flex items-center">
+
                             <label for="email" class="hidden lg:tw-inline-block">
                                 <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                             </label>
+
                             <input type="text" id="email" name="email" placeholder="Your email address"
                                 class="lg:bg-transparent pl-4">
+
+                            @error('email')
+                                <span class="text-xs text-red-500">{{ $message }}</span>
+                            @enderror
+
                         </div>
 
                         <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-600 mt-4 lg:ml-3 lg:mt-0 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">Subscribe</button>
+                            class="bg-blue-500 hover:bg-blue-600 mt-4 lg:ml-3 lg:mt-0 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
+                            Subscribe
+                        </button>
                     </form>
                 </div>
             </div>
