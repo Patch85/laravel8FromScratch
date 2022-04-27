@@ -1,14 +1,13 @@
 @props(['post'])
 
 <article
-    class="transition-colors duration-300 hover:bg-gray-100 rounded-xl border border-black border-opacity-0 hover:border-opacity-5">
-    <div class="py-6  px-4 lg:flex">
+    class="rounded-xl border border-black border-opacity-0 transition-colors duration-300 hover:border-opacity-5 hover:bg-gray-100">
+    <div class="py-6 px-4 lg:flex">
         <div class="flex-1 lg:mr-8">
-            {{-- TODO --}}
-            <img src="/images/illustration-1.png" alt="Blog post illustration 1" class="rounded-xl">
+            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Blog post illustration" class="rounded-xl">
         </div>
 
-        <div class="flex-1 flex flex-col justify-between">
+        <div class="flex flex-1 flex-col justify-between">
             <header class="mt-8 lg:mt-0">
                 <div class="space-x-2">
                     <x-category-button :category="$post->category" />
@@ -22,21 +21,22 @@
                         </a>
                     </h1>
 
-                    <span class="mt-2 block text-gray-400 text-xs">
+                    <span class="mt-2 block text-xs text-gray-400">
                         <time>{{ $post->created_at->diffForHumans() }}</time>
                     </span>
                 </div>
             </header>
 
-            <div class="text-sm mt-2 space-y-4">
+            <div class="mt-2 space-y-4 text-sm">
                 {!! $post->excerpt !!}
             </div>
 
-            <footer class="flex justify-between items-center mt-2">
+            <footer class="mt-2 flex items-center justify-between">
 
                 <div class="flex items-center text-sm">
 
-                     <img src="https://i.pravatar.cc/60?u={{ $post->author->id }}" alt="random avatar" width="60" class="rounded-xl">
+                    <img src="https://i.pravatar.cc/60?u={{ $post->author->id }}" alt="random avatar" width="60"
+                        class="rounded-xl">
 
                     <div class="ml-3">
                         <h5 class="font-bold">
@@ -50,8 +50,7 @@
 
                 <div class="hidden lg:block">
                     <a href="/posts/{{ $post->slug }}"
-                        class="transition-colors duration-300 text-xs font-semibold
-                            bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8">
+                        class="rounded-full bg-gray-200 py-2 px-8 text-xs font-semibold transition-colors duration-300 hover:bg-gray-300">
                         Read More
                     </a>
                 </div>

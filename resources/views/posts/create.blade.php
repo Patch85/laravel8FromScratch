@@ -1,8 +1,11 @@
 <x-layout title="Blog - New Post">
     <x-slot name="content">
-        <section class="px-6 py-8">
+        <section class="mx-auto max-w-md py-8">
+
+            <h1 class="mb-4 text-lg font-bold">Publish New Post</h1>
+
             <x-panel class="mx-auto max-w-sm">
-                <form action="/admin/posts" method="post">
+                <form action="/admin/posts" method="post" enctype="multipart/form-data">
                     @csrf
 
                     {{-- Title --}}
@@ -57,6 +60,13 @@
                         @error('category')
                             <p class="mt-2 text-xs text-red-500">{{ $message }}</p>
                         @enderror
+                    </div>
+
+                    {{-- Thumbnail --}}
+                    <div class="mb-6">
+                        <label for="thumbnail" class="mb-2 block text-xs font-bold uppercase text-gray-700">Thumbnail</label>
+
+                        <input type="file" name="thumbnail" id="thumbnail" class="w-full border border-gray-400 p-2">
                     </div>
 
 

@@ -1,16 +1,16 @@
 <x-layout title="Blog - {{ $post->title }}">
     <x-slot name="content">
-        <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6 pt-10">
-            <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
+        <main class="mx-auto mt-6 max-w-6xl space-y-6 pt-10 lg:mt-20">
+            <article class="mx-auto max-w-4xl gap-x-10 lg:grid lg:grid-cols-12">
 
                 <div class="col-span-4 text-center">
-                    <img src="/images/illustration-1.png" alt="Lary illustration" class="rounded-xl">
+                    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="thumbnail image for the post" class="rounded-xl">
 
-                    <p class="mt-4 block text-gray-400 text-xs">
+                    <p class="mt-4 block text-xs text-gray-400">
                         Published <time>{{ $post->created_at->diffForHumans() }}</time>
                     </p>
 
-                    <div class="flex items-center justify-center text-sm mt-4">
+                    <div class="mt-4 flex items-center justify-center text-sm">
                         <img src="https://i.pravatar.cc/60?u={{ $post->author->id }}" alt="random avatar" width="60"
                             class="rounded-xl">
                         <div class="ml-3 text-left">
@@ -24,9 +24,9 @@
                 </div>
 
                 <div class="col-span-8">
-                    <div class="flex justify-between mb-6 -mt-10">
+                    <div class="mb-6 -mt-10 flex justify-between">
                         <a href="/posts"
-                            class="relative inline-flex items-center text-lg hover:text-blue-500 transition-colors duration-200">
+                            class="relative inline-flex items-center text-lg transition-colors duration-200 hover:text-blue-500">
 
                             <x-icon name="left-arrow" class="mr-2" />
                             Back to Posts
@@ -37,7 +37,7 @@
                         </div>
                     </div>
 
-                    <h1 class="font-bold text-4xl mb-10">{{ $post->title }}</h1>
+                    <h1 class="mb-10 text-4xl font-bold">{{ $post->title }}</h1>
 
                     <div class="space-y-6 text-lg">
                         {!! $post->body !!}
@@ -58,16 +58,17 @@
                                 </header>
 
                                 <div class="mt-6">
-                                    <textarea name="body" rows="5" class="w-full mt-10 text-sm focus:ring p-2" placeholder="Your thoughts here..." required></textarea>
+                                    <textarea name="body" rows="5" class="mt-10 w-full p-2 text-sm focus:ring" placeholder="Your thoughts here..."
+                                        required></textarea>
 
                                     @error('body')
                                         <span class="text-xs text-red-500">{{ $message }}</span>
                                     @enderror
                                 </div>
 
-                                <footer class="flex justify-end mt-6 pt-6 border-t border-gray-200">
+                                <footer class="mt-6 flex justify-end border-t border-gray-200 pt-6">
                                     <button type="submit"
-                                        class="bg-blue-500 text-white text-xs uppercase font-semibold rounded-2xl py-2 px-10 hover:bg-blue-600">Post</button>
+                                        class="rounded-2xl bg-blue-500 py-2 px-10 text-xs font-semibold uppercase text-white hover:bg-blue-600">Post</button>
                                 </footer>
                             </form>
                         </x-panel>

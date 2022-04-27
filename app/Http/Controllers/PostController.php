@@ -59,10 +59,16 @@ class PostController extends Controller
             'excerpt' => ['required', 'min:3'],
             'body'  => ['required', 'min:3'],
             'category_id' => ['required', Rule::exists('categories', 'id')],
-        ], $request->only(['title', 'excerpt', 'body', 'category_id']));
+            'thumbnail' => ['min:5', 'image'],
+        ], $request->only(['title', 'excerpt', 'body', 'category_id', 'thumbnail']));
 
         $input['user_id'] = auth()->id();
         $input['slug'] = Str::slug($input['title']);
+
+        if ($request->hasFile('thumbnail') && $request->file('thumbnail')->isValid()) {
+            $input['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
+        }
+
 
         $post = Post::create($input);
 
