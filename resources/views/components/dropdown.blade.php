@@ -1,6 +1,6 @@
 @props(['trigger', 'links'])
 
-<div x-data="{ show: false }" @click.away="show = false">
+<div x-data="{ show: false }" @click.away="show = false" class="relative">
 
     {{-- Trigger --}}
     <div @click="show = ! show">
@@ -8,7 +8,8 @@
     </div>
 
     {{-- Dropdown Links --}}
-    <div x-show="show" class="py-2 absolute bg-gray-100 mt-2 rounded-xl w-full z-50 overflow-auto max-h-52" style="display: none">
+    <div x-show="show" class="absolute z-50 mt-2 max-h-52 w-full overflow-auto rounded-xl bg-gray-100 py-2"
+        style="display: none">
         {{ $links }}
     </div>
 </div>

@@ -1,71 +1,36 @@
 <x-layout title="Register">
     <x-slot name="content">
-        <main class="max-w-lg mx-auto mt-10 bg-gray-100 p-6 rounded-xl border border-gray-200">
+        <main class="mx-auto mt-10 max-w-lg">
+            <x-panel>
 
-            <h1 class="text-center font-bold text-xl">Register</h1>
+                <h1 class="text-center text-xl font-bold">Register</h1>
 
-            <form action="/register" method="post" class="mt-10">
+                <form action="/register" method="post" class="mt-10">
 
-                @csrf
+                    @csrf
 
-                <div class="mb-6">
-                    <label for="name" class="block mb-2 uppercase font-bold text-xs text-gray-700">
-                        Name
-                    </label>
+                    <x-form.input type='text' name='name' placeholder="Jane Doe" autocomplete="name" required />
 
-                    <input type="text" class="border border-gray-400 p-2 w-full" name="name" id="name" value="{{ old('name') }}" placeholder="Jane Doe" required>
+                    <x-form.input type='text' name='username' placeholder="janeDoe" autocomplete="nickname" required />
 
-                    @error('name')
-                        <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
+                    <x-form.input type='email' name='email' placeholder="janeDoe@email.com" autocomplete="email"
+                        required />
 
-                  <div class="mb-6">
-                    <label for="username" class="block mb-2 uppercase font-bold text-xs text-gray-700">
-                        Username
-                    </label>
+                    <x-form.input type='password' name='password' placeholder="gO0d$trongP4$$w0rd"
+                        autocomplete="new-password" required />
 
-                    <input type="text" class="border border-gray-400 p-2 w-full" name="username" id="username" value="{{ old('username') }}" placeholder="janeDoe" required>
+                    <x-form.button type="submit" displayText="Submit" />
 
-                    @error('username')
-                        <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
+                    @if ($errors->any())
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li class="text-xs text-red-600">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
-               <div class="mb-6">
-                    <label for="email" class="block mb-2 uppercase font-bold text-xs text-gray-700">
-                        Email
-                    </label>
-
-                    <input type="email" name="email" id="email" class="border border-gray-400 p-2 w-full" value="{{ old('email') }}" placeholder="janeDoe@email.com" required>
-
-                    @error('email')
-                        <p class="text-red-600 text-xs mt-1">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6">
-                    <label for="password" class="block mb-2 uppercase font-bold text-xs text-gray-700">
-                        Password
-                    </label>
-
-                    <input type="password" name="password" id="password" class="border border-gray-400 p-2 w-full" required >
-                </div>
-
-                <div class="mb-6">
-                    <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">Submit</button>
-                </div>
-
-                @if ($errors->any())
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li class="text-red-600 text-xs">{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                @endif
-
-            </form>
-
+                </form>
+            </x-panel>
         </main>
     </x-slot>
 </x-layout>
