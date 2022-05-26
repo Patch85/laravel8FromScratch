@@ -39,32 +39,20 @@ class AdminPostController extends Controller
         return view('admin.posts.create');
     }
 
+
     /**
      * Store a new Post
      *
      * @param Request $request
      * @return View|Factory
      * @throws BindingResolutionException
+     * @throws Exception
      */
     public function store(Request $request)
     {
-        $input = $request->validate([
-            'title' => ['required', 'min:3', 'max:255', Rule::unique('posts', 'title')],
-            'excerpt' => ['required', 'min:3'],
-            'body'  => ['required', 'min:3'],
-            'category_id' => ['required', Rule::exists('categories', 'id')],
-            'thumbnail' => ['min:5', 'image'],
-        ], $request->only(['title', 'excerpt', 'body', 'category_id', 'thumbnail']));
+        $attributes = $this->validatePost($request);
 
-        $input['user_id'] = auth()->id();
-        $input['slug'] = Str::slug($input['title']);
-
-        if ($request->hasFile('thumbnail') && $request->file('thumbnail')->isValid()) {
-            $input['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
-        }
-
-
-        $post = Post::create($input);
+        $post = Post::create($attributes);
 
         return view('posts.show', [
             'post' => $post,
@@ -95,8 +83,41 @@ class AdminPostController extends Controller
      */
     public function update(Post $post, Request $request)
     {
+        $attributes = $this->validatePost($request, $post);
+
+        $post->update($attributes);
+
+        return back()->with('success', 'Post Updated!');
+    }
+
+    /**
+     * Delete an existing Post
+     *
+     * @param Post $post
+     * @return RedirectResponse
+     * @throws LogicException
+     * @throws BindingResolutionException
+     */
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return back()->with('success', 'Post Deleted!');
+    }
+
+    /**
+     * @param Request $request
+     * @param null|Post $post
+     * @return array
+     * @throws BindingResolutionException
+     * @throws Exception
+     */
+    protected function validatePost(Request $request, ?Post $post = null): array
+    {
+        $post ??= new Post();
+
         $attributes = $request->validate([
-            'title' => ['required', 'min:3', 'max:255', Rule::unique('posts', 'title')->ignore($post->id)],
+            'title' => ['required', 'min:3', 'max:255', Rule::unique('posts', 'title')->ignore($post)],
             'excerpt' => ['required', 'min:3'],
             'body'  => ['required', 'min:3'],
             'category_id' => ['required', Rule::exists('categories', 'id')],
@@ -110,22 +131,6 @@ class AdminPostController extends Controller
             $attributes['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
         }
 
-
-        $post->update($attributes);
-
-        return back()->with('success', 'Post Updated!');
-    }
-
-    /**
-     * @param Post $post
-     * @return RedirectResponse
-     * @throws LogicException
-     * @throws BindingResolutionException
-     */
-    public function destroy(Post $post)
-    {
-        $post->delete();
-
-        return back()->with('success', 'Post Deleted!');
+        return $attributes;
     }
 }
