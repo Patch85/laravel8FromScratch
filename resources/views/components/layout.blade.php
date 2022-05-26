@@ -35,7 +35,7 @@
                         </x-slot>
 
                         <x-slot name="links">
-                            <x-dropdown-item href="/admin/dashboard">Dashboard</x-dropdown-item>
+                            <x-dropdown-item href="/admin/posts" :active="request()->routeIs('adminPosts')">All Posts</x-dropdown-item>
 
                             <x-dropdown-item href="/admin/posts/create" :active="request()->routeIs('newPost')">New Post</x-dropdown-item>
 

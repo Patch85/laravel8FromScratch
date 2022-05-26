@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostController;
@@ -16,6 +17,19 @@ Route::get('/posts', [PostController::class, 'index'])->name('posts');
 
 Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('post');
 
+
+// Admin - Posts
+Route::get('/admin/posts', [AdminPostController::class, 'index'])->middleware('admin')->name('adminPosts');
+
+Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin')->name('newPost');
+
+Route::post('/admin/posts', [AdminPostController::class, 'store'])->middleware('admin');
+
+Route::get('/admin/post/{post:slug}/edit', [AdminPostController::class, 'edit'])->middleware('admin')->name('editPost');
+
+Route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->middleware('admin');
+
+Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin')->name('deletePost');
 
 // Comments
 Route::post('/posts/{post:slug}/comments', [CommentController::class, 'store'])->middleware('auth');
@@ -37,9 +51,3 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth
 
 // Subscribe to the Newsletter
 Route::post('/newsletter', NewsletterController::class);
-
-
-// Admin
-Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('admin')->name('newPost');
-
-Route::post('admin/posts', [PostController::class, 'store'])->middleware('admin');
