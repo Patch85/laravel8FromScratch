@@ -19,26 +19,20 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('post');
 
 
 // Admin - Posts
-Route::get('/admin/posts', [AdminPostController::class, 'index'])->middleware('admin')->name('adminPosts');
-
-Route::get('/admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin')->name('newPost');
-
-Route::post('/admin/posts', [AdminPostController::class, 'store'])->middleware('admin');
-
-Route::get('/admin/post/{post:slug}/edit', [AdminPostController::class, 'edit'])->middleware('admin')->name('editPost');
-
-Route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->middleware('admin');
-
-Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin')->name('deletePost');
+Route::middleware('can:admin')->group(function () {
+    Route::resource('admin/posts', AdminPostController::class)->except('show');
+});
 
 // Comments
 Route::post('/posts/{post:slug}/comments', [CommentController::class, 'store'])->middleware('auth');
 
 
 // User Registration
-Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
+Route::middleware('guest')->group(function () {
+    Route::get('/register', [RegisterController::class, 'create'])->name('register');
 
-Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
+    Route::post('/register', [RegisterController::class, 'store']);
+});
 
 
 // User Login & Logout

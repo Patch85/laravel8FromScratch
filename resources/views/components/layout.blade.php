@@ -35,9 +35,15 @@
                         </x-slot>
 
                         <x-slot name="links">
-                            <x-dropdown-item href="/admin/posts" :active="request()->routeIs('adminPosts')">All Posts</x-dropdown-item>
+                            @admin
+                                <x-dropdown-item href="/admin/posts" :active="request()->routeIs('adminPosts')">
+                                    All Posts
+                                </x-dropdown-item>
 
-                            <x-dropdown-item href="/admin/posts/create" :active="request()->routeIs('newPost')">New Post</x-dropdown-item>
+                                <x-dropdown-item href="/admin/posts/create" :active="request()->routeIs('newPost')">
+                                    New Post
+                                </x-dropdown-item>
+                            @endadmin
 
                             <x-dropdown-item href="#" x-data="{}"
                                 @click.prevent="document.querySelector('#logout-form').submit()">Log Out</x-dropdown-item>
